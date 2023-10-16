@@ -1,5 +1,13 @@
 package com.jee_simulation.simulation_jee.Dto;
 
+
+import lombok.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+
 public class Simulation {
 
     private Double capitalEmprunte;
