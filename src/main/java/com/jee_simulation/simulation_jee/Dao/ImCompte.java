@@ -1,2 +1,4 @@
-package com.jee_simulation.simulation_jee.Dao;public class ImCompte {
+package com.jee_simulation.simulation_jee.Dao;
+
+public class ImCompte {
 }

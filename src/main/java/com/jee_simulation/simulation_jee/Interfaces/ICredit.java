@@ -1,2 +1,4 @@
-package com.jee_simulation.simulation_jee.Interfaces;public interface ICredit {
+package com.jee_simulation.simulation_jee.Interfaces;
+
+public interface ICredit {
 }

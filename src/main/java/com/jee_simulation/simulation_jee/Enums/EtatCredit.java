@@ -1,2 +1,4 @@
-package com.jee_simulation.simulation_jee.Enums;public class EtatCredit {
+package com.jee_simulation.simulation_jee.Enums;
+
+public class EtatCredit {
 }

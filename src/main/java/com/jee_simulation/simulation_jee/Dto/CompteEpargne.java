@@ -1,2 +1,4 @@
-package com.jee_simulation.simulation_jee.Dto;public class CompteEpargne {
+package com.jee_simulation.simulation_jee.Dto;
+
+public class CompteEpargne {
 }

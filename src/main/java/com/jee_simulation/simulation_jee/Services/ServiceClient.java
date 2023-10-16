@@ -1,2 +1,4 @@
-package com.jee_simulation.simulation_jee.Services;public class ServiceClient {
+package com.jee_simulation.simulation_jee.Services;
+
+public class ServiceClient {
 }
