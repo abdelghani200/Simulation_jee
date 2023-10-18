@@ -12,7 +12,8 @@ import lombok.*;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "agence")
+@Table(name = "personne", schema = "gestion_bancaire")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Personne {
 
     @Id
@@ -25,7 +26,14 @@ public abstract class Personne {
     protected String prenom;
     @Column(name = "telephone")
     protected String telephone;
-    @Column(name = "dateNaissance")
-    protected LocalDate dateNaissance;
 
+    @Column(name = "dateNaissance")
+    private LocalDate dateNaissance;
+
+    public Personne(String nom, String prenom, LocalDate datenaissance, String telephone) {
+        setNom(nom);
+        setPrenom(prenom);
+        setTelephone(telephone);
+        setDateNaissance(datenaissance);
+    }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "employe")
+@Table(name = "employe", schema = "gestion_bancaire")
 public class Employe extends Personne{
 
     @Column(name = "matricule")
@@ -22,10 +22,15 @@ public class Employe extends Personne{
     @Column(name = "adresseEmail")
     private String adresseEmail;
 
-    @OneToMany(mappedBy = "employe")
-    private List<Compte> compteArrayList = new ArrayList<>();
-    @OneToMany(mappedBy = "client")
-    private List<Client> clientArrayList = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY) // Or FetchType.EAGER depending on your needs
+    @JoinColumn(name = "personne_id") // The name of the foreign key column in Employe table
+    private Personne personne;
 
 
+    public Employe(String nom, String prenom, LocalDate datenaissance, String telephone, String matricule, String adressemail, LocalDate daterecrutement) {
+        super(nom, prenom, datenaissance, telephone);
+        setMatricule(matricule);
+        setAdresseEmail(adressemail);
+        setDateRecrutement(daterecrutement);
+    }
 }

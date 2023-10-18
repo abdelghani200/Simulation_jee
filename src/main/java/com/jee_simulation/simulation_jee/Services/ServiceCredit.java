@@ -17,7 +17,7 @@ public class ServiceCredit {
     }
 
     public Credit createCredit(Credit credit) throws Exception {
-        Optional<Credit> savedCredit = creditService.craete(credit);
+        Optional<Credit> savedCredit = creditService.create(credit);
         if (savedCredit.isPresent()){
             return savedCredit.get();
         } else {
@@ -40,11 +40,11 @@ public class ServiceCredit {
     }
 
     public List<Credit> findByEtat(EtatCredit etatCredit){
-        return creditService.findByEtat(etatCredit);
+        return creditService.getByEtat(etatCredit);
     }
 
     public List<Credit> findByDate(LocalDate date){
-        return creditService.findByDate(date);
+        return creditService.getByDate(date);
     }
 
 
