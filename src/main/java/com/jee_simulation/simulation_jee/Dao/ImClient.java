@@ -1,13 +1,11 @@
 package com.jee_simulation.simulation_jee.Dao;
 
 import com.jee_simulation.simulation_jee.Dto.Client;
-import com.jee_simulation.simulation_jee.Dto.Employe;
-import com.jee_simulation.simulation_jee.Dto.Personne;
 import com.jee_simulation.simulation_jee.Interfaces.IClient;
 import com.jee_simulation.simulation_jee.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
+
 
 
 import java.util.ArrayList;

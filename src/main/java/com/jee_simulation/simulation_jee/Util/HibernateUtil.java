@@ -1,6 +1,7 @@
 package com.jee_simulation.simulation_jee.Util;
 
 import com.jee_simulation.simulation_jee.Dto.Client;
+import com.jee_simulation.simulation_jee.Dto.Credit;
 import com.jee_simulation.simulation_jee.Dto.Employe;
 import com.jee_simulation.simulation_jee.Dto.Personne;
 import org.hibernate.SessionFactory;
@@ -25,6 +26,7 @@ public class HibernateUtil {
             configuration.addAnnotatedClass(Personne.class);
             configuration.addAnnotatedClass(Client.class);
             configuration.addAnnotatedClass(Employe.class);
+            configuration.addAnnotatedClass(Credit.class);
 
             sessionFactory = configuration.buildSessionFactory();
         }

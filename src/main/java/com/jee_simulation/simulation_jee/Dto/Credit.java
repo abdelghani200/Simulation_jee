@@ -2,7 +2,10 @@ package com.jee_simulation.simulation_jee.Dto;
 
 import com.jee_simulation.simulation_jee.Enums.EtatCredit;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 import java.time.LocalDate;
 
@@ -11,23 +14,23 @@ import java.time.LocalDate;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "credit")
+@Table(name = "credit", schema = "eazybank")
 public class Credit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "numero")
+    @Column(name = "number")
     private Integer numero;
-    @Column(name = "montant")
+    @Column(name = "amount")
     private Double montant;
     @Column(name = "remarques")
     private String remarques;
-    @Column(name = "etat")
+    @Column(name = "state")
     @Enumerated(EnumType.STRING)
     private EtatCredit etat;
-    @Column(name = "date")
+    @Column(name = "credit_date")
     private LocalDate date;
-    @Column(name = "duree")
+    @Column(name = "duration")
     private Integer duree;
 
 
