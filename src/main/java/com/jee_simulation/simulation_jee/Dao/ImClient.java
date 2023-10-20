@@ -1,6 +1,7 @@
 package com.jee_simulation.simulation_jee.Dao;
 
 import com.jee_simulation.simulation_jee.Dto.Client;
+import com.jee_simulation.simulation_jee.Dto.Employe;
 import com.jee_simulation.simulation_jee.Dto.Personne;
 import com.jee_simulation.simulation_jee.Interfaces.IClient;
 import com.jee_simulation.simulation_jee.Util.HibernateUtil;
@@ -23,34 +24,15 @@ public class ImClient extends ImPersonne<Client> implements IClient {
 
 
     public List<Client> readAll() {
-        List<Client> clients = new ArrayList<>();
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            Query<Client> clientQuery = session.createQuery("FROM Client", Client.class);
-            clients = clientQuery.list();
 
-            for (Client client : clients) {
-                int personneId = client.getId(); // Supposons que vous stockez l'ID de la personne dans le client
-
-                // Chargez la personne associée au client
-                Query<Personne> personneQuery = session.createQuery("FROM Personne WHERE id = :id", Personne.class);
-                personneQuery.setParameter("id", personneId);
-                Personne personne = personneQuery.uniqueResult();
-
-                if (personne != null) {
-                    client.setNom(personne.getNom());
-                    client.setPrenom(personne.getPrenom());
-                    client.setTelephone(personne.getTelephone());
-
-                    if (personne instanceof Client) {
-                        Client associatedClient = (Client) personne;
-                        client.setAdresse(associatedClient.getAdresse());
-                    }
-                }
-            }
+        List<Client> clientList = new ArrayList<>();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            clientList = session.createQuery("from Client ", Client.class).list();
         } catch (Exception e) {
-            e.printStackTrace(); // Affichez l'erreur
+            System.out.println("error message: " + e.getMessage());
+            e.printStackTrace();
         }
-        return clients;
+        return clientList;
     }
 
 

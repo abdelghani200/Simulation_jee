@@ -21,7 +21,7 @@ public class ServiceEmploye {
         return employeService.save(employe);
     }
 
-    public Optional<List<Employe>> getAllEmployes(){
+    public List<Employe> getAllEmployes(){
         return employeService.readAllEmployes();
     }
 

@@ -22,6 +22,7 @@
             <li><a href="/View/Templetes/acceuil.jsp">Home</a></li>
             <li><a href="/Clients">Clients</a></li>
             <li><a href="/Employes">Employes</a></li>
+            <li><a href="/View/Simulation/credit.jsp">Simulation</a></li>
         </ul>
     </nav>
 </header>

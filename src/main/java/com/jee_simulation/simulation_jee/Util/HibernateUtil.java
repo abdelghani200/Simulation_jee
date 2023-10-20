@@ -15,7 +15,7 @@ public class HibernateUtil {
 
             // Configure Hibernate properties
             configuration.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
-            configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/Gestion_Bancaire");
+            configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/EazyBank");
             configuration.setProperty("hibernate.connection.username", "postgres");
             configuration.setProperty("hibernate.connection.password", "youcode2023");
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");

@@ -26,6 +26,7 @@ public class ServletClient extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        listClients(request, response);
         String action = request.getParameter("action");
 
         if (action == null) {
@@ -49,7 +50,7 @@ public class ServletClient extends HttpServlet {
                 chercheClients(request,response);
                 break;
             default:
-                listClients(request, response);
+               // listClients(request, response);
         }
     }
 
@@ -57,12 +58,8 @@ public class ServletClient extends HttpServlet {
     private void listClients(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Client> clients = serviceClient.getAllClients();
 
-        if (!clients.isEmpty()) {
-            request.setAttribute("clients", clients);
-        } else {
-            System.out.println("La liste des clients est vide.");
-        }
-
+        request.setAttribute("clients", clients);
+        //response.getWriter().println(clients);
         request.getRequestDispatcher("/View/Clients/listeClients.jsp").forward(request, response);
     }
 
@@ -91,7 +88,7 @@ public class ServletClient extends HttpServlet {
 
 
     private void createOrUpdateClient(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String code = request.getParameter("code");
+        int code = Integer.parseInt(request.getParameter("code"));
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         LocalDate datenaissance = LocalDate.parse(request.getParameter("datenaissance"));

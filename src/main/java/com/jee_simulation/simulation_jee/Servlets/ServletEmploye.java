@@ -28,6 +28,7 @@ public class ServletEmploye extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        listesEmployes(req, resp);
         String action = req.getParameter("action");
 
         if(action == null){
@@ -52,22 +53,17 @@ public class ServletEmploye extends HttpServlet {
                 chercheClients(req, resp);
                 break;
             default:
-                listesEmployes(req, resp);
+
 
         }
 
     }
 
     private void listesEmployes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Optional<List<Employe>> optionalEmployes = serviceEmploye.getAllEmployes();
-        if (optionalEmployes.isPresent()){
-            List<Employe> employes = optionalEmployes.get();
-            request.setAttribute("employes", employes);
-        }else{
-            System.out.println("Error!");
-        }
-
-        request.getRequestDispatcher("/View/Employes/listeEmployes.jsp").forward(request,response);
+        List<Employe> employes = serviceEmploye.getAllEmployes();
+        request.setAttribute("employes", employes);
+        //response.getWriter().println(employes);
+        request.getRequestDispatcher("/View/Employes/listeEmployes.jsp").forward(request, response);
     }
 
     private void chercheClients(HttpServletRequest request, HttpServletResponse response) throws  ServletException, IOException {

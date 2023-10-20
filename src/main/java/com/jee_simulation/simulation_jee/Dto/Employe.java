@@ -7,24 +7,29 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
 @Entity
-@Table(name = "employe", schema = "gestion_bancaire")
+@Table(name = "employes", schema = "eazybank")
 public class Employe extends Personne{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "matricule")
     private String matricule;
-    @Column(name = "dateRecrutement")
+    @Column(name = "daterecrutement")
     private LocalDate dateRecrutement;
-    @Column(name = "adresseEmail")
+    @Column(name = "adresseemail")
     private String adresseEmail;
 
-    @ManyToOne(fetch = FetchType.LAZY) // Or FetchType.EAGER depending on your needs
-    @JoinColumn(name = "personne_id") // The name of the foreign key column in Employe table
-    private Personne personne;
+
+
+
+
 
 
     public Employe(String nom, String prenom, LocalDate datenaissance, String telephone, String matricule, String adressemail, LocalDate daterecrutement) {
@@ -33,4 +38,6 @@ public class Employe extends Personne{
         setAdresseEmail(adressemail);
         setDateRecrutement(daterecrutement);
     }
+
+
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: adm
@@ -13,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/js/index.js">
 </head>
 <body>
-<div class="left-column">
-<form id="credit-form" action="rechercheEmploye.jsp">
+<div id="credit-section" class="left-column">
+<form id="credit-form" action="">
     <label for="project">Mon projet</label>
     <select class="form-select" id="project" name="project">
         <option value="1">J'ai besion d'argent</option>
@@ -47,7 +48,7 @@
     <input type="range" id="monthly-payment-range" name="monthly-payment" min="1" required>
 
 
-    <input type="submit" value="Simuler">
+    <input type="submit" value="Simuler" id="simulate-button">
 </form>
 </div>
 
@@ -60,7 +61,25 @@
     <p>Durée sélectionnée (en mois) : <span id="selected-duration">-</span></p>
     <p>Mensualités sélectionnées (en DH) : <span id="selected-monthly-payment">-</span></p>
 </div>
+
+<div id="search-section" class="right-column form_12" style="display: none;">
+    <label for="selectedEmployee">Sélectionnez un employé :</label>
+    <select id="selectedEmployee" name="selectedEmployee">
+        <c:forEach items="${employes}" var="employe">
+            <option value="${employe.matricule}">
+                    ${employe.nom} ${employe.prenom}
+            </option>
+        </c:forEach>
+    </select>
+    <br>
+    <input type="submit" value="Continue">
+
+</div>
+
+
 </body>
+
+
 
 <script>
 
@@ -87,6 +106,21 @@
 
         numberInputDuration.value = rangeInputDuration.value;
     });
+
+
+    // Récupérez le bouton "Simuler" par son identifiant
+    const simulateButton = document.getElementById('simulate-button');
+
+    const searchSection = document.getElementById('search-section');
+
+    simulateButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        document.getElementById('credit-section').style.display = 'none';
+        searchSection.style.display = 'block';
+    });
+
+
 
 </script>
 

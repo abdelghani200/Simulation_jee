@@ -9,39 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d97f5e89-0a08-4cf3-902f-71df3fe6cde1" name="Changes" comment="Project set-up">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Services/ServiceSimulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletEmploye.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Util/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/View/Clients/addClients.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/View/Clients/listeClients.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/View/Employes/listeEmployes.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/View/Simulation/credit.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/View/Simulation/rechercheEmploye.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/View/Templetes/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/View/Templetes/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ressources/css/credit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ressources/css/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ressources/css/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ressources/css/liste.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ressources/js/index.js" afterDir="false" />
+    <list default="true" id="d97f5e89-0a08-4cf3-902f-71df3fe6cde1" name="Changes" comment="git commit -m &quot;SJ-4 Import Dto, interfaces, &amp; ajoute annotation des Hibernate&quot;">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Db/script.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dao/ImClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dao/ImClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dao/ImEmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dao/ImEmploye.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dao/ImPersonne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dao/ImPersonne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Db/DatabaseConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Agence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Agence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Employe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Dto/Personne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Interfaces/IClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Interfaces/IClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Interfaces/IEmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Interfaces/IEmploye.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Interfaces/IPersonne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Interfaces/IPersonne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Services/ServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Services/ServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Services/ServiceCredit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Services/ServiceCredit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Services/ServiceEmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Services/ServiceEmploye.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletCredit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletCredit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletEmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Servlets/ServletEmploye.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jee_simulation/simulation_jee/Util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/View/Simulation/credit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/View/Simulation/credit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/View/Simulation/rechercheEmploye.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/View/Templetes/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/View/Templetes/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ressources/css/credit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ressources/css/credit.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +49,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
@@ -96,7 +88,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Jelouani&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -106,7 +98,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Tomcat Server.header.jsp">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
     <configuration name="Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="Simulation_jee:war exploded">
@@ -631,10 +623,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Tomcat Server.header.jsp" />
-        <item itemvalue="Tomcat Server.index.jsp" />
-        <item itemvalue="Tomcat Server.credit.jsp" />
         <item itemvalue="Tomcat Server.listeEmployes.jsp" />
+        <item itemvalue="Tomcat Server.index.jsp" />
+        <item itemvalue="Tomcat Server.header.jsp" />
+        <item itemvalue="Tomcat Server.credit.jsp" />
         <item itemvalue="Tomcat Server.listeClients.jsp" />
       </list>
     </recent_temporary>
@@ -651,7 +643,9 @@
       <workItem from="1697489394543" duration="36000" />
       <workItem from="1697532686685" duration="21611000" />
       <workItem from="1697617908764" duration="12037000" />
-      <workItem from="1697654452077" duration="6037000" />
+      <workItem from="1697654452077" duration="6838000" />
+      <workItem from="1697704279971" duration="17517000" />
+      <workItem from="1697788945225" duration="2088000" />
     </task>
     <task id="LOCAL-00001" summary="Project set-up">
       <option name="closed" value="true" />
@@ -661,7 +655,31 @@
       <option name="project" value="LOCAL" />
       <updated>1697462867009</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="git commit -m &quot;SJ-2 Frontend simulation&quot;">
+      <option name="closed" value="true" />
+      <created>1697661116964</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697661116964</updated>
+    </task>
+    <task id="LOCAL-00003" summary="git commit -m &quot;SJ-3 Class HibernateUtil created&quot;">
+      <option name="closed" value="true" />
+      <created>1697661206309</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697661206309</updated>
+    </task>
+    <task id="LOCAL-00004" summary="git commit -m &quot;SJ-4 Import Dto, interfaces, &amp; ajoute annotation des Hibernate&quot;">
+      <option name="closed" value="true" />
+      <created>1697661325473</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697661325473</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,6 +687,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project set-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project set-up" />
+    <MESSAGE value="git commit -m &quot;SJ-2 Frontend simulation&quot;" />
+    <MESSAGE value="git commit -m &quot;SJ-3 Class HibernateUtil created&quot;" />
+    <MESSAGE value="git commit -m &quot;SJ-4 Import Dto, interfaces, &amp; ajoute annotation des Hibernate&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="git commit -m &quot;SJ-4 Import Dto, interfaces, &amp; ajoute annotation des Hibernate&quot;" />
   </component>
 </project>

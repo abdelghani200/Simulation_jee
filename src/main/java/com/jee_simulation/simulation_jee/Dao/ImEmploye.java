@@ -1,16 +1,11 @@
 package com.jee_simulation.simulation_jee.Dao;
 
 import com.jee_simulation.simulation_jee.Dto.Employe;
-import com.jee_simulation.simulation_jee.Dto.Personne;
 import com.jee_simulation.simulation_jee.Interfaces.IEmploye;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.JoinType;
-import jakarta.persistence.criteria.Root;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import com.jee_simulation.simulation_jee.Util.HibernateUtil;
-import org.hibernate.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,26 +50,17 @@ public class ImEmploye extends ImPersonne<Employe> implements IEmploye {
 
 
     @Override
-    public Optional<List<Employe>> readAllEmployes() {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-            CriteriaQuery<Employe> query = criteriaBuilder.createQuery(Employe.class);
-            Root<Employe> employeRoot = query.from(Employe.class);
-            query.select(employeRoot);
-            query.distinct(true); // Utilisez distinct pour éviter les doublons si plusieurs employés pointent vers la même personne.
-
-            // Utilisez une jointure pour charger les données de Personne
-            employeRoot.fetch("personne", JoinType.INNER);
-
-            List<Employe> employes = session.createQuery(query).getResultList();
-            return Optional.ofNullable(employes);
+    public List<Employe> readAllEmployes() {
+        List<Employe> employes = new ArrayList<>();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            employes = session.createQuery("from Employe ", Employe.class).list();
         } catch (Exception e) {
-            e.printStackTrace(); // Affichez l'erreur
+            System.out.println("error message: " + e.getMessage());
+            e.printStackTrace();
         }
-        return Optional.empty();
+        return employes;
+
     }
-
-
 
     @Override
     public boolean deleteEmploye(String matricule) {

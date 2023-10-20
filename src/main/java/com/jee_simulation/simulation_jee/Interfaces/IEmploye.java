@@ -9,7 +9,7 @@ public interface IEmploye {
 
 
     Optional<Employe> findByMatricule(String matricule);
-    Optional<List<Employe>> readAllEmployes();
+    List<Employe> readAllEmployes();
 
     boolean deleteEmploye(String matricule);
 

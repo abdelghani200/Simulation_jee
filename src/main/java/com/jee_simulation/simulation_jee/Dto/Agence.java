@@ -10,21 +10,24 @@ import lombok.*;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "agence")
+@Table(name = "agence", schema = "eazybank")
 public class Agence {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private int id;
+
     @Column(name = "code")
     private String code;
-    @Column(name = "nom")
+    @Column(name = "name")
     private String nom;
-    @Column(name = "adresse")
+    @Column(name = "address")
     private String adresse;
-    @Column(name = "telephone")
+    @Column(name = "phone")
     private String telephone;
+
+
+
+
 
 
 
