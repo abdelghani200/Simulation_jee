@@ -22,7 +22,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "employees")
-public final class Employee extends Person {
+public final class Employee extends Person  {
     
     @Column(length = 255, nullable = false, unique = true)
     private String email;

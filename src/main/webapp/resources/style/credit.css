@@ -1,0 +1,124 @@
+/* styles.css */
+
+/* Container style */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+/* Table style */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table header style */
+thead {
+    background-color: #007BFF;
+    color: #000000;
+}
+
+th {
+    padding: 10px;
+}
+
+/* Table row style */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Table cell style */
+td {
+    padding: 10px;
+}
+
+/* Action column style (e.g., Edit and Delete buttons) */
+td:last-child {
+    text-align: center;
+}
+
+/* Link style for action buttons (you can customize this further) */
+a.button {
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Style pour l'icône "Update" en vert */
+.icon-link.green {
+    color: green; /* Couleur verte */
+    margin-right: 5px; /* Espace entre l'icône et le texte */
+}
+
+/* Style pour l'icône "Delete" en rouge */
+.icon-link.red {
+    color: red; /* Couleur rouge */
+    margin-right: 5px; /* Espace entre l'icône et le texte */
+}
+
+/* Style pour les boutons "Update" et "Delete" (ne changez pas ces styles) */
+.icon-link {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Change la couleur au survol du bouton (ne changez pas ces styles) */
+.icon-link:hover {
+    background-color: #0056b3;
+}
+
+td{
+    text-align: center;
+}
+
+/* Style pour le formulaire de recherche */
+.search-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Style pour le champ de recherche */
+.search-input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style pour le bouton de recherche */
+.search-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Change la couleur au survol du bouton */
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.container_liste {
+    width: 80%;
+    margin: 20px auto; /* Ajoute de l'espace en haut et en bas */
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+

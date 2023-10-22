@@ -6,18 +6,18 @@ import java.util.Optional;
 import com.jee_simulation.dao.interfaces.AgencyDao;
 import com.jee_simulation.entities.Agency;
 
+import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
 @ApplicationScoped
-@Named("agency_dao_hibernate_implementation")
+@Priority(1)
 public class AgencyDaoImpl implements AgencyDao {
 
     @Inject
-    private final EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Override
     public List<Agency> read() {

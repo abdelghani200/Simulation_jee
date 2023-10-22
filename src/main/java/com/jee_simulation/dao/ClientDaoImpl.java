@@ -4,25 +4,20 @@ import java.util.List;
 import java.util.Optional;
 
 import com.jee_simulation.dao.interfaces.ClientDao;
-import com.jee_simulation.dao.interfaces.EmployeeDao;
 import com.jee_simulation.entities.Client;
 
+import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
 @ApplicationScoped
-@Named("client_dao_hibernate_implementation")
+@Priority(1)
 public class ClientDaoImpl implements ClientDao {
 
     @Inject
-    private final EntityManager entityManager;
-
-    @Inject
-    @Named("employee_dao_hibernate_implementation")
-    private final EmployeeDao employeeDao;
+    private EntityManager entityManager;
 
     @Override
     public List<Client> read() {

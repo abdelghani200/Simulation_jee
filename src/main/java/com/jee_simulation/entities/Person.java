@@ -18,7 +18,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @MappedSuperclass
-public abstract class Person {
+public abstract class Person  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

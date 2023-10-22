@@ -10,8 +10,8 @@ import lombok.Setter;
 public class CreditRequestSimulation {
     
     public static final double yearlyProportionalRate = 0.12;
-    private int duration;
-    private double borrowedAmount;
-    private double mounthlyAmount;
+    private Integer duration;
+    private Double borrowedAmount;
+    private Double monthlyAmount;
 
 }
