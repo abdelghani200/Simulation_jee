@@ -6,3 +6,5 @@ rangeInput.addEventListener('input', () => {
 
     numberInput.value = rangeInput.value;
 });
+
+
