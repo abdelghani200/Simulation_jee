@@ -1,5 +1,6 @@
 package com.jee_simulation.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -20,7 +21,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "agencies")
-public class Agency {
+public class Agency implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -13,10 +13,17 @@
       <property name="hibernate.hbm2ddl.auto" value="update" />
       
       <!-- data base connection -->
-      <property name="jakarta.persistance.jdbc.driver" value="org.postgresql.Driver" />
-      <property name="jakarta.persistance.jdbc.url" value="jdbc:postgresql://localhost:5432/EasyBank_web" />
-      <property name="jakarta.persistance.jdbc.user" value="mizo" />
+      <!-- <property name="jakarta.persistance.jdbc.driver" value="org.postgresql.Driver" />
+      <property name="jakarta.persistance.jdbc.url" value="jdbc:postgresql://localhost:5432/easybank_ee" />
+      <property name="jakarta.persistance.jdbc.user" value="postgres" />
       <property name="jakarta.persistance.jdbc.password" value="password" />
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> -->
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/easybank_ee" />
+      <property name="javax.persistence.jdbc.user" value="postgres" />
+      <property name="javax.persistence.jdbc.password" value="password" />
+
+
     </properties>
   </persistence-unit>
 </persistence>

@@ -4,32 +4,22 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import com.jee_simulation.dao.interfaces.AgencyDao;
-import com.jee_simulation.dao.interfaces.ClientDao;
 import com.jee_simulation.dao.interfaces.CreditRequestDao;
 import com.jee_simulation.entities.CreditRequest;
 import com.jee_simulation.enums.CreditReuquestStatus;
 
+import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
 @ApplicationScoped
-@Named("credit_request_dao_hibernate_implementation")
+@Priority(1)
 public class CreditRequestDaoImpl implements CreditRequestDao {
 
     @Inject
-    private final EntityManager entityManager;
-
-    @Inject
-    @Named("client_dao_hibernate_implementation")
-    private final ClientDao clientDao;
-
-    @Inject
-    @Named("agency_dao_hibernate_implementation")
-    private final AgencyDao agencyDao;
+    private EntityManager entityManager;
 
     @Override
     public Optional<CreditRequest> create(CreditRequest creditRequest) {
