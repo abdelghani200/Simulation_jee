@@ -4,25 +4,22 @@
 <head>
     <c:set var="title" value="${requestScope.title}" />
     <title>EasyBank - ${title}</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/header.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/footer.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/list.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/style/credit.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ressources/js/index.js">
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="display: block;">
+<body>
 <header>
-    <div id="logo">
-        <h1>EasyBank</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="/View/Templetes/acceuil.jsp">Home</a></li>
-            <li><a href="/Clients">Clients</a></li>
-            <li><a href="/Employes">Employes</a></li>
-            <li><a href="/View/Simulation/credit.jsp">Simulation</a></li>
-        </ul>
+    <nav class="bg-white shadow">
+        <div class="px-6 py-4 mx-auto">
+            <div class="flex items-center justify-center">
+                <div class="absolute inset-x-0 z-20 w-full px-6 py-4 translate-x-0 opacity-100 transition-all duration-300 ease-in-out bg-white shadow-md lg:bg-transparent lg:none:bg-transparent lg:shadow-none none:bg-gray-900 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0">
+                    <div class="-mx-4 lg:flex lg:items-center">
+                        <a href="${pageContext.request.contextPath}/" class="block mx-4 text-gray-700 capitalize none:text-gray-200 hover:text-blue-600 none:hover:text-blue-400">Home</a>
+                        <a href="${pageContext.request.contextPath}/creditRequests" class="block mx-4 mt-4 text-gray-700 capitalize lg:mt-0 none:text-gray-200 hover:text-blue-600 none:hover:text-blue-400">Credit request list</a>
+                        <a href="${pageContext.request.contextPath}/creditRequestSimulation" class="block mx-4 mt-4 text-gray-700 capitalize lg:mt-0 none:text-gray-200 hover:text-blue-600 none:hover:text-blue-400">Simulation</a>
+                    </div>
+            </div>
+        </div>
     </nav>
 </header>
 

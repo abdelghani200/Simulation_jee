@@ -3,7 +3,7 @@ package com.jee_simulation.entities;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import com.jee_simulation.enums.CreditReuquestStatus;
+import com.jee_simulation.enums.CreditRequestStatus;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -55,7 +55,7 @@ public class CreditRequest implements Serializable {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private CreditReuquestStatus status;
+    private CreditRequestStatus status;
 
     @ManyToOne
     @JoinColumn(name = "agency_id", nullable = false)

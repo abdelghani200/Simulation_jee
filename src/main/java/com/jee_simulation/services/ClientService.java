@@ -4,7 +4,7 @@ package com.jee_simulation.services;
 import java.util.List;
 
 import com.jee_simulation.dao.interfaces.ClientDao;
-import com.jee_simulation.jsonbAddapters.ClientAdapter;
+import com.jee_simulation.utilities.jsonbAddapters.ClientAdapter;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

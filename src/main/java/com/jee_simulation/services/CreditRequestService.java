@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.jee_simulation.dao.interfaces.CreditRequestDao;
 import com.jee_simulation.entities.CreditRequest;
-import com.jee_simulation.enums.CreditReuquestStatus;
+import com.jee_simulation.enums.CreditRequestStatus;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -28,15 +28,20 @@ public class CreditRequestService {
         return creditRequestDao.find(creditRequestId).orElse(null);
     }
 
-    public CreditRequest updateStatus(CreditRequest creditRequest) {
+    public CreditRequest updateStatus(int creditRequestId, String newStatus) {
+
+        var creditRequest = find(creditRequestId);
+        var status =  CreditRequestStatus.valueOf(newStatus);
+        creditRequest.setStatus(status);
         return creditRequestDao.updateStatus(creditRequest).orElse(null);
+
     }
 
     public List<CreditRequest> getByDate(LocalDate date) {
         return creditRequestDao.getByDate(date);
     }
 
-    public List<CreditRequest> getByStatus(CreditReuquestStatus status) {
+    public List<CreditRequest> getByStatus(CreditRequestStatus status) {
         return creditRequestDao.getByStatus(status);
     }
     

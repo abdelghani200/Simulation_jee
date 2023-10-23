@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import com.jee_simulation.dao.interfaces.CreditRequestDao;
 import com.jee_simulation.entities.CreditRequest;
-import com.jee_simulation.enums.CreditReuquestStatus;
+import com.jee_simulation.enums.CreditRequestStatus;
 
 import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -89,7 +89,7 @@ public class CreditRequestDaoImpl implements CreditRequestDao {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<CreditRequest> getByStatus(CreditReuquestStatus creditRequestStatus) {
+    public List<CreditRequest> getByStatus(CreditRequestStatus creditRequestStatus) {
        
         String hql = "FROM CreditRequest WHERE status = :status";
         return (List<CreditRequest>) entityManager.createQuery(hql) 

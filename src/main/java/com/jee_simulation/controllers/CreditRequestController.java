@@ -1,8 +1,10 @@
 package com.jee_simulation.controllers;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import com.jee_simulation.entities.CreditRequest;
+import com.jee_simulation.enums.CreditRequestStatus;
 import com.jee_simulation.services.CreditRequestService;
 
 import jakarta.inject.Inject;
@@ -22,11 +24,14 @@ public class CreditRequestController extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         request.setAttribute("title", "Credit requests list");
-        String id = request.getParameter("id");
-        if( id == null || id.isEmpty() )
-            request.setAttribute("creditRequests", creditRequestService.read());
+        if( request.getParameter("id") != null )
+            find(request, response);
+        else if( request.getParameter("date") != null )
+            getByDate(request, response);
+        else if( request.getParameter("status") != null )
+            getByStatus(request, response);
         else
-            request.setAttribute("foundedCreditRequest", creditRequestService.find( Integer.parseInt(id) ));
+            request.setAttribute("creditRequests", creditRequestService.read());
         request.getRequestDispatcher( "pages/CreditRequests.jsp").forward(request, response);
 
     }
@@ -45,5 +50,28 @@ public class CreditRequestController extends HttpServlet {
         request.getRequestDispatcher("pages/creditRequest/CreditRequested.jsp").forward(request, response);
 
     }
+
+    public void find(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        Integer id = Integer.parseInt( request.getParameter("id") );
+        if( id != null  )
+            request.setAttribute("foundedCreditRequest", creditRequestService.find(id));
+
+    }
+
+    public void getByDate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        LocalDate date = LocalDate.parse( request.getParameter("date") );
+        if(date != null)
+            request.setAttribute("creditRequestsByDate", creditRequestService.getByDate(date) );
+
+    } 
     
+    public void getByStatus(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        CreditRequestStatus status = CreditRequestStatus.valueOf( request.getParameter("status") );
+        if(status != null) 
+            request.setAttribute("creditRequestByStatus", creditRequestService.getByStatus(status) );
+            
+    }
 }

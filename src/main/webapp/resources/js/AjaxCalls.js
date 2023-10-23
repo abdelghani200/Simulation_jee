@@ -1,4 +1,4 @@
-const BASEPATH = "http://localhost/EasyBank/"
+const BASEPATH = "http://localhost/EasyBankEE/"
 
 function getClients() {
     let clients = {};

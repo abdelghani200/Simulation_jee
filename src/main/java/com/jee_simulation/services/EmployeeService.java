@@ -3,7 +3,7 @@ package com.jee_simulation.services;
 import java.util.List;
 
 import com.jee_simulation.dao.interfaces.EmployeeDao;
-import com.jee_simulation.jsonbAddapters.EmployeeAdapter;
+import com.jee_simulation.utilities.jsonbAddapters.EmployeeAdapter;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -33,7 +33,7 @@ public class EmployeeService {
             return employeeAdapter.adaptToJson( employeeDao.find(employeeId).orElse(null) );
         } catch (Exception e) { e.printStackTrace(); }
         return null;
-        
+
     }
 
     
