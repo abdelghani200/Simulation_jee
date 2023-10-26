@@ -3,7 +3,21 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-  <persistence-unit name="default">
+  <persistence-unit name="postgreSQL_persistence_unit" transaction-type="RESOURCE_LOCAL">
+    <description>this is a persistence unit that use postgreSQL as a JDBC driver</description>
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
+    <properties>
+      <property name="hibernate.shwo_sql" value="true" />
+      <property name="hibernate.hbm2ddl.auto" value="update" />
+
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/EazyBank" />
+      <property name="javax.persistence.jdbc.user" value="postgres" />
+      <property name="javax.persistence.jdbc.password" value="youcode2023" />
+
+
+    </properties>
   </persistence-unit>
 </persistence>
